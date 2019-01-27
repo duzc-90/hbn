@@ -1,4 +1,880 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     margin: 0;
     padding: 0;
+}
+img {
+    vertical-align: middle;
+}
+.pointer {
+    cursor: pointer;
+}
+.model {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 2500;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 150px;
+}
+.model.visible {
+    display: block;
+}
+.model .model_btn {
+    padding: 5px 15px;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin-right: 35px;
+    border-radius: 2px;
+}
+.model .model_btn.confirm {
+    background-color: dodgerblue;
+    color: #ffffff;
+}
+.model .model_btn.cancel {
+    background-color: #dddddd;
+}
+#model_content {
+    background-color: #ffffff;
+}
+#model_content .footer {
+    text-align: right;
+}
+.model_form {
+    width: 40%;
+    margin: auto;
+    box-shadow: 1px 1px 2px #888888;
+    border-radius: 3px;
+    min-width: 600px;
+}
+.model_form >div:last-child {
+    padding: 20px;
+}
+.join_form {
+    margin-top: 20px;
+}
+.join_form >div select,.join_form >div input{
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+.join_form > div {
+    margin-top: 20px;
+}
+.model_title {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f75959;
+    border-radius: 3px 3px 0px 0px;
+}
+.model_title > div:first-child {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.model_title .close {
+    cursor: pointer;
+    color: #444444;
+}
+.model_title .close:hover {
+    color: #666666;
+}
+.mytop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.topZbottom {
+    width: 100%;
+    height: 140px;
+}
+.w-primary {
+    width: 1300px;
+    margin: auto;
+    margin-top: 60px;
+}
+.w-side {
+    flex-grow: 1;
+}
+.overflow_hidden {
+    overflow: hidden;
+}
+.block_title {
+    border: 1px solid #2a333c;
+    padding: 10px 25px;
+}
+.block_title .cn {
+    color: #333333;
+}
+.block_title .en {
+    color: #666666;
+}
+.myside {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    z-index: 1999;
+    width: 60px;
+}
+.myside>div {
+    padding: 15px;
+}
+.myside img {
+    width: 30px;
+    vertical-align: middle;
+}
+.myside > div {
+    white-space: nowrap;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.myside > div > span {
+    display: none;
+    padding-left: 15px;
+    color: #ffffff;
+}
+.myside > div.common:hover {
+    width: 180px;
+    background-color: #f00;
+    transform: translate(-150px);
+}
+.myside > div.common:hover span {
+    display: inline;
+}
+.slider_sp {
+    position: relative;
+}
+.slider_sp >div {
+    display: none;
+    transition: all 0.5s linear;
+}
+.slider_sp >div.show {
+    display: block;
+}
+.basecase img{
+    transition: all 0.3s linear;
+    vertical-align: middle;
+}
+.basecase:hover img {
+    transform: scale(1.1);
+}
+.w-knowledge {;
+    width: 420px;
+}
+.mx-20 {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.mybadge {
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    background-color: #f00;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 3px;
+}
+.mybadge +div {
+    padding-left: 10px;
+}
+.mybadge +div >div {
+    margin-bottom: 10px;
+}
+.desc {
+    color: #666666;
+}
+.font_small {
+    font-size: 12px;
+}
+.priceinfo input, .priceinfo button {
+    outline: none;
+    border-color: transparent;
+    border-radius: 3px;
+}
+.priceinfo .light {
+    background-color: #eeeeee;
+    padding-left: 15px;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.footer_border {
+    border-top: 2px solid #d2d2d2;
+    width: 100%;
+}
+.friend_link {
+    text-decoration: none;
+    color: #888888;
+    white-space: nowrap;
+}
+.friend_link +ul{
+    list-style: none;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+}
+.mynav a {
+    text-decoration: none;
+    color: #000000;
+}
+.mynav a.active,.mynav a:hover{
+    color: #f00;
+}
+.mynav ul {
+    display: flex;
+    list-style: none;
+}
+.mynav ul li {
+    margin: 0 20px;
+}
+.caseY {
+    width: 100%;
+    height: 0%;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    animation: growY 0.8s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes growY {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 40%;
+    }
+}
+.caseX {
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    position: absolute;
+    right: -50%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    animation: growX 0.8s linear;
+    animation-fill-mode: forwards;
+}
+@keyframes growX {
+    0% {
+        right: -50%;
+    }
+    100% {
+        right: 0%;
+    }
+}
+.arrow {
+    height: 80px;
+    width: 30px;
+    /*background-color: transparent;*/
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: rgba(0,0,0,0.1);
+}
+/*.arrow:hover {
+}*/
+.w-100 {
+    width: 100%;
+}
+.w-50 {
+    width: 50%;
+}
+.d-flex {
+    display: flex;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.seperator {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.flex-column {
+    flex-direction: column;
+}
+.justify-content-between {
+    justify-content: space-between;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.case_item {
+    width: 640px;
+}
+.position-relative {
+    position: relative;
+}
+.caseX h3,.caseX p,.caseY h3,.caseY p {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.align-items-center {
+    align-items: center;
+}
+.w-ab-25 {
+    width: 305px;
+    margin: 0 10px;
+    flex-grow: 0;
+}
+figure {
+    margin: 0;
+}
+.text-center{
+    text-align: center;
+}
+.w-25 {
+    width: 25%;
+}
+.w-75 {
+    width: 75%;
+}
+.d-none {
+    display: none;
+}
+.p-15 {
+    padding: 15px;
+}
+.mt-10 {
+    margin-top: 10px;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.footer_link {
+    text-decoration: none;
+    color: #f00;
+    margin: 0 3px;
+}
+.text-right {
+    text-align: right;
+}
+@media screen and (min-width: 1280px){
+    .w-primary {
+        width: 1000px;
+        margin: auto;
+        margin-top: 60px;
+    }
+    .case_item {
+        width: 490px;
+    }
+}
+@media screen and (min-width: 1440px){
+    .w-primary {
+        width: 1300px;
+        margin: auto;
+        margin-top: 60px;
+    }
+    .case_item {
+        width: 640px;
+    }
+}
+/*case 详情*/
+.case_desc {
+    padding-left: 80px;
+    box-sizing: border-box;
+}
+.case_desc p{
+    color: #666666;
+    margin-top: 20px;
+}
+.case_desc ul {
+    color: #666666;
+    border-bottom: 1px solid #f0f2f5;
+    border-top: 1px solid #f0f2f5;
+    padding: 5px 0;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.case_desc ul li {
+    width: 50%;
+}
+.recom {
+    padding-right: 50px;
+}
+.detail-title {
+    text-align: center;
+    padding: 5px 20px;
+    border-bottom: 1px solid #f00;
+    color: #f00;
+}
+.detail-title +div {
+    flex-grow: 1;
+    border-bottom: 1px solid #f0f2f5;
+}
+.detail_line {
+    margin-top: 50px;
+    border-bottom: 2px solid #f0f2f5;
+    width: 100%;
+}
+/*case 详情*/
+/*分页*/
+.page {
+    color: #666666;
+    list-style: none;
+}
+.page_item {
+    padding: 5px 15px;
+    border: 1px solid #666666;
+    margin: 0 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.page_item.active {
+    background-color: #f75959;
+    border-color: #f75959;
+    color: #ffffff;
+}
+.page_item:hover {
+    background-color: #f75959;
+    border-color: #f75959;
+    color: #ffffff;
+}
+/*分页*/
+/*婚礼案例*/
+.condition_outer {
+    border: 1px solid #e4e4e4;
+    height: 81px;
+    line-height: 40px;
+}
+.condition_outer >div:first-child {
+    border-bottom: 1px solid #e4e4e4;
+}
+.condition {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    display: flex;
+    background-color: #fafafa;
+}
+.condition >div,.condition li {
+    height: 40px;
+    line-height: 40px;
+}
+.condition >div:first-child {
+    width: 120px;
+    background-color: #e5e5e5;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.condition ul {
+    list-style: none;
+    display: flex;
+}
+.case_container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.case_container .desc_item {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+.desc_item >div {
+    width: 44%;
+}
+.desc_item >div:first-child {
+    margin-left: 4%;
+}
+.desc_item >div:last-child {
+    margin-right: 4%;
+}
+.desc_box {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.more {
+    border: 1px solid #000000;
+    border: 1px solid;
+    color: #666666;
+    overflow: hidden;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 160px;
+    transition: all 0.5s linear 0.2s;
+    text-decoration: none;
+}
+.more:hover {
+    border-color: #f75959;
+    background-color: #f75959;
+}
+.more:hover span {
+    transform: translate(0,-100%);
+}
+.more:hover span:after {
+    background-color: #f75959;
+    color: #fff;
+}
+.more >span {
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    transition: all 0.5s linear;
+}
+.more >span:after {
+    content: attr(data-title);
+    position: absolute;
+    height: 40px;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    color: transparent;
+    transform: translate(0, 100%);
+    transition: all 0.5s linear 0.1s;
+}
+/*婚礼案例*/
+/*婚礼策划*/
+.nav_panning {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #666666;
+    padding-bottom: 25px;
+}
+.planning_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.planning_item .outer {
+    position: absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.4);
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+}
+.planning_item .outer a {
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 15px;
+    border: 1px solid #ffffff;
+    margin-top: 15px;
+    display: inline-block;
+}
+.planning_item .outer >div {
+    text-align: center;
+}
+.planning_item .outer a:hover {
+    background-color: #ffffff;
+    color: #666666;
+}
+.planning_item {
+    width: 31%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-right: 1.5%;
+}
+.planning_item img {
+    width: 100%;
+    transition: all 0.3s linear;
+}
+.planning_item:hover img {
+    transform: scale(1.1);
+}
+.planning_item:hover .outer {
+    opacity: 1;
+}
+/*婚礼策划*/
+/*品牌*/
+.brand_img {
+    width: 80%;
+    margin-left: 10%;
+}
+.brand_seperator {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+/*品牌*/
+/*婚礼锦囊*/
+.news_img {
+    width: 160px;
+}
+.news_container {
+    list-style: none;
+}
+.news_container >li {
+    position: relative;
+    padding: 30px 0;
+}
+.news_container >li::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 160px;
+    height: 1px;
+    background-color: #333333;
+    color: #333333;
+    transition: all 0.5s linear;
+}
+.news_container >li:hover::after{
+    width: 100%;
+}
+.news_container a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+.news_container a:hover {
+    color: #ff0000;
+}
+.news_side {
+    width: 94%;
+    margin: auto;
+    border: 1px solid rgba(240,240,240,0.5);
+    padding: 20px;
+    box-sizing: border-box;
+}
+.news_side .side_item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(240,240,240);
+}
+.news_side .side_item .search {
+    position: relative;
+}
+.search_icon {
+    width: 16px;
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+.news_side .side_item .search .round{
+    border-radius: 17px;
+}
+.news_side .side_item .search >input {
+    width: 100%;
+    line-height: 35px;
+    border: 1px solid #e4eaec;
+    box-sizing: border-box;
+    text-indent: 10px;
+    outline: none;
+}
+.news_side .side_item .search >input:focus {
+    border-color: #333333;
+}
+.side_links {
+    list-style: none;
+}
+.side_links >li {
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.side_links >li:first-child {
+    margin-top: 0;
+}
+.side_links >li:hover {
+    color: #f75959;
+}
+.side_links >li >a {
+    text-decoration: none;
+    color: inherit;
+}
+.side_links >li.active {
+    color: #f75959;
+}
+.side_recom {
+    width: 100%;
+    border: 1px solid rgb(240,240,240);
+    margin-top: 10px;
+}
+.side_recom >div {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(240,240,240);
+}
+.side_recom >div:last-child {
+    border: none;
+}
+.side_recom a {
+    text-decoration: none;
+    color: inherit;
+}
+.news_content_l {
+    padding-right: 50px;
+    box-sizing: border-box;
+}
+.news_content {
+    border: 1px solid rgba(240,240,240,0.5);
+}
+.news_content >div{
+    padding: 15px;
+}
+.news_content >div:not(:last-child) {
+    border-bottom: 1px solid rgba(240,240,240,0.5);
+}
+.news_content >div>p,.news_content >div>img {
+    margin: 40px 0;
+}
+.news_content >div>p {
+    line-height: 30px;
+}
+.news_content .news_detail_page {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.news_detail_page a {
+    display: block;
+    padding: 10px 25px;
+    border: 1px solid #858585;
+    text-decoration: none;
+    color: inherit;
+}
+.news_detail_page a:hover {
+    color: #f75959;
+    background-color: #f3f7f9;
+}
+.news_eye {
+    width: 18px;
+    margin-top: -4px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/*婚礼锦囊*/
+/*联系我们*/
+.contact_info {
+    padding-left: 30px;
+    color: #2a333c;
+}
+.contact_info >p {
+    margin: 10px 0;
+}
+.contact_info >p:first-child {
+    color: rgb(196, 189, 151);
+}
+.contact_info >p a {
+    text-decoration: none;
+    color: #62a8ea;
+}
+.contact_info >p span {
+    color: rgb(127, 127, 127);
+}
+.info_container {
+    width: 70%;
+    margin: auto;
+}
+.info_container >div {
+    margin-bottom: 20px;
+}
+.info_container button {
+    width: 100%;
+    background-color: #f75959;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding: 8px 0;
+}
+.info_container >div input, .info_container >div select{
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+.join_img {
+    width: 15px;
+    margin-bottom: 2px;
+}
+.join_desc {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.want_btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #f84444;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.want_btn:hover {
+    box-shadow: 1px 1px 3px #666666;
+    transform: translate(-1px,-1px);
+}
+.join_line {
+    height: 2px;
+    background-color: #cccccc;
+}
+.join_img_container {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/*联系我们*/
+#mainFrame {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: auto;
+}
+#footerFrame {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 438px;
+}
+#pageFrame {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 35px;
+    margin-top: 50px;
 }

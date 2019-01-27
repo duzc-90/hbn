@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>婚礼策划</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <div class="w-100 d-flex justify-content-center mt-30">
+        <div>
+            <h1><span>活动策划</span><span class="mx-20">|</span><span>Event planning</span></h1>
+        </div>
+    </div>
+    <div class="nav_panning">
+        <div class="mynav">
+            <div>
+                <ul>
+                    <li><a href="javascript:;" class="active">全部</a></li>
+                    <li><a href="javascript:;">宝宝宴</a></li>
+                    <li><a href="javascript:;">寿宴</a></li>
+                    <li><a href="javascript:;">求婚</a></li>
+                    <li><a href="javascript:;">企业年会</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="w-primary planning_container">
+        <div class="planning_item">
+            <img src="../images/planning/planning_1.jpg" alt="">
+            <div class="outer">
+                <div>
+                    <h2>【依贝佳34周年·魅惑之夜】</h2>
+                    <a href="detail-case.html">浏览</a>
+                </div>
+            </div>
+        </div>
+        <div class="planning_item">
+            <img src="../images/planning/planning_2.jpg" alt="">
+            <div class="outer">
+                <div>
+                    <h2>【依贝佳34周年·魅惑之夜】</h2>
+                    <a href="detail-case.html">浏览</a>
+                </div>
+            </div>
+        </div>
+        <div class="planning_item">
+            <img src="../images/planning/planning_3.jpg" alt="">
+            <div class="outer">
+                <div>
+                    <h2>【依贝佳34周年·魅惑之夜】</h2>
+                    <a href="detail-case.html">浏览</a>
+                </div>
+            </div>
+        </div>
+        <div class="planning_item">
+            <img src="../images/planning/planning_4.jpg" alt="">
+            <div class="outer">
+                <div>
+                    <h2>【依贝佳34周年·魅惑之夜】</h2>
+                    <a href="detail-case.html">浏览</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <iframe id="pageFrame" src="page.html" frameborder="0" scrolling="no"></iframe>
+    <iframe id="footerFrame" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    <script>
+        var co = document.getElementsByClassName("nav_panning")[0];
+        co.onclick = function (e) {
+            if (e.target.nodeName == 'A') {
+                if (e.target.className != 'active') {
+                    e.target.parentElement.parentElement.querySelector('a.active').className = '';
+                    e.target.className = 'active';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+#文档说明
+#(-) :说明文件已经完成
+#=====================================================================================================
+#html:   container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        index.html              #主页
+#        cases.html              #案例
+#        footer.html             #底部获取报价
+#        page.html               #分页
+#        planning.html           #活动策划
+#        brand.html              #品牌
+#        news.html               #锦囊
+#        contact.html            #联系我们
+#        detail-case.html        #案例详情以及活动策划详情等
+#        detail-news.html        #锦囊详情
+
+
+
+
+#js:     app.js                  #后台总的js
+#
+#        pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.5
+#html:   (-)container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        (-)index.html              #主页
+#        (-)detail-case.html        #案例详情以及活动策划详情等
+#        (-)footer.html             #底部获取报价
+#        (-)page.html               #分页
+
+#        cases.html              #案例
+#        planning.html           #活动策划
+#        brand.html              #品牌
+#        news.html               #锦囊
+#        contact.html            #联系我们
+#        detail-news.html        #锦囊详情
+
+
+
+
+#js:     app.js                  #后台总的js
+
+#        (-)pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.5
+#html:   (-)container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        (-)index.html              #主页
+#        (-)detail-case.html        #案例详情以及活动策划详情等
+#        (-)footer.html             #底部获取报价
+#        (-)page.html               #分页
+
+#        (-)cases.html              #案例
+#        (-)planning.html           #活动策划
+#        brand.html              #品牌
+#        news.html               #锦囊
+#        contact.html            #联系我们
+#        detail-news.html        #锦囊详情
+
+
+
+
+#js:     app.js                  #后台总的js
+
+#        (-)pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.7
+#html:   (-)container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        (-)index.html              #主页
+#        (-)detail-case.html        #案例详情以及活动策划详情等
+#        (-)footer.html             #底部获取报价
+#        (-)page.html               #分页
+
+#        (-)cases.html              #案例
+#        (-)planning.html           #活动策划
+#        (-)brand.html              #品牌
+#        (-)news.html               #锦囊
+#        (-)contact.html            #联系我们
+#        detail-news.html        #锦囊详情
+
+
+
+
+#js:     app.js                  #后台总的js
+
+#        (-)pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.8
+#html:   (-)container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        (-)index.html              #主页
+#        (-)detail-case.html        #案例详情以及活动策划详情等
+#        (-)footer.html             #底部获取报价
+#        (-)page.html               #分页
+
+#        (-)cases.html              #案例
+#        (-)planning.html           #活动策划
+#        (-)brand.html              #品牌
+#        (-)news.html               #锦囊
+#        (-)contact.html            #联系我们
+#        (-)detail-news.html        #锦囊详情
+
+
+
+
+#js:     app.js                  #后台总的js
+
+#        (-)pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.10
+#html:   (-)container.html          #外部容器，包含顶部和右侧fix浮动部分，里面的iframe将指向一下页面
+
+#        (-)index.html              #主页
+#        (-)detail-case.html        #案例详情以及活动策划详情等
+#        (-)footer.html             #底部获取报价
+#        (-)page.html               #分页
+
+#        (-)cases.html              #案例
+#        (-)planning.html           #活动策划
+#        (-)brand.html              #品牌
+#        (-)news.html               #锦囊
+#        (-)contact.html            #联系我们
+#        (-)detail-news.html        #锦囊详情
+#        (-)infomation.html         #在线预约
+#        (-)join.html               #加入我们
+
+
+
+
+#js:     app.js                  #后台总的js
+
+#        (-)pool.js                 #后台连接池js
+#        base.js                 #后台路由js
+
+
+#        common.js               #前端的js
+
+
+
+#css     common.css              #样式文件
+#============================================================2018.12.18

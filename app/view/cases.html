@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>婚礼案例</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+    <div class="w-100 d-flex justify-content-center mt-30">
+        <div>
+            <h1><span>婚礼案例</span><span class="mx-20">|</span><span>Cases</span></h1>
+        </div>
+    </div>
+    <div class="w-primary condition_outer">
+        <div class="condition mynav">
+            <div>类型：</div>
+            <div>
+                <ul>
+                    <li><a href="javascript:;" class="active">全部</a></li>
+                    <li><a href="javascript:;">宴会厅婚礼</a></li>
+                    <li><a href="javascript:;">户外婚礼</a></li>
+                    <li><a href="javascript:;">集体婚礼</a></li>
+                    <li><a href="javascript:;">婚礼秀</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="condition mynav">
+            <div>色系：</div>
+            <div>
+                <ul>
+                    <li><a href="javascript:;" class="active">全部</a></li>
+                    <li><a href="javascript:;">粉色</a></li>
+                    <li><a href="javascript:;">白色</a></li>
+                    <li><a href="javascript:;">红色</a></li>
+                    <li><a href="javascript:;">蓝色</a></li>
+                    <li><a href="javascript:;">绿色</a></li>
+                    <li><a href="javascript:;">香槟色</a></li>
+                    <li><a href="javascript:;">复古色</a></li>
+                    <li><a href="javascript:;">黄色</a></li>
+                    <li><a href="javascript:;">其他</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="case_container">
+        <div class="desc_item">
+            <div>
+                <img src="../images/case/case_desc_1.jpg" class="w-100" alt="">
+            </div>
+            <div>
+                <h2>迷堡</h2>
+                <p class="desc_box mt-10">还有古堡外郁郁葱葱的花园 悬念伴随着美景 密布每一寸的秘境 虽然说这里犹如野兽的魔窟 但渐渐深入接触后 却有了描绘成 “险径通幽处，谜堡花木深”意境。</p>
+                <a href="detail-case.html" class="mt-30 more">
+                    <span data-title="查看详情">查看详情</span>
+                </a>
+            </div>
+        </div>
+        <div class="desc_item">
+            <div>
+                <img src="../images/case/case_desc_2.jpg" class="w-100" alt="">
+            </div>
+            <div style="width: 44%;margin-right: 4%">
+                <h2>守望</h2>
+                <p class="desc_box mt-10">不知不觉，年轮划过十年。 那些一路越过的岁月。 有人引我前进，有人护我周全。 我甘愿十年不变，是因为你们同在。 或安心，或温暖。 如同家人，此生不变</p>
+                <a href="detail-case.html" class="mt-30 more">
+                    <span data-title="查看详情">查看详情</span>
+                </a>
+            </div>
+        </div>
+        <div class="desc_item">
+            <div>
+                <img src="../images/case/case_desc_3.jpg" class="w-100" alt="">
+            </div>
+            <div style="width: 44%;margin-right: 4%">
+                <h2>城堡密语</h2>
+                <p class="desc_box mt-10">粉色花艺装点童话城堡的浪漫氛围，四处弥漫的少女粉，水晶珠帘垂落点缀在繁花簇锦之中，在灯光的照射下，晶莹剔透衬托无限的浪漫氛围，圆形舞台被粉色芦苇萦绕，象征性的营造出一幅兴兴向荣的生机与美妙，装饰的飞马与城堡的细节，为这座粉色王国更加增添了一丝梦幻仪式感，让每一位小公主都能置身在梦幻的粉色美梦里。</p>
+                <a href="detail-case.html" class="mt-30 more">
+                    <span data-title="查看详情">查看详情</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <iframe id="pageFrame" src="page.html" frameborder="0" scrolling="no"></iframe>
+    <iframe id="footerFrame" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    <script>
+        var co = document.getElementsByClassName("condition_outer")[0];
+        co.onclick = function (e) {
+            if (e.target.nodeName == 'A') {
+                if (e.target.className != 'active') {
+                    e.target.parentElement.parentElement.querySelector('a.active').className = '';
+                    e.target.className = 'active';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

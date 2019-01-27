@@ -2,89 +2,321 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <script src="../js/jquery-slim.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <style>
-        .mytop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 2000;
-        }
-        .topZbottom {
-            width: 100%;
-            height: 10rem;
-        }
-        .w-primary {
-            width: 66%;
-            margin: auto;
-        }
-        .block_title {
-            border: 1px solid #2a333c;
-            padding: 0.6rem 1.5rem;
-        }
-        .block_title .cn {
-            color: #333333;
-        }
-        .block_title .en {
-            color: #666666;
-        }
-    </style>
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/common.css">
 </head>
+<script>
+    (function () {
+        window.onload = function () {
+            let timer = setInterval(myslider, 3000);
+            let themeTimer = setInterval(themeSlideNext, 3000);
+            let slider = document.querySelector('[data-action="slide"]');
+            slider.onmouseover = function () {
+                clearInterval(timer);
+            }
+            slider.onmouseout = function () {
+                timer = setInterval(myslider, 3000);
+            }
+            document.getElementById('arrow-l').onclick = function () {
+                themeSlidePrev();
+            }
+            document.getElementById('arrow-r').onclick = function () {
+                themeSlideNext();
+            }
+            document.getElementById('theme_slider').onclick = function (e) {
+                if (e.target.parentElement.id = 'theme_slider') {
+                    window.location.href = 'detail-case.html';
+                }
+            }
+        }
+        function myslider () {
+            let slider = document.querySelector('[data-action="slide"]');
+            let cur = slider.querySelector('.show');
+            let next = cur.nextElementSibling;
+            if (!next) {
+                next = cur.parentElement.firstElementChild;
+            }
+            cur.className = '';
+            next.className = 'show';
+        }
+        function themeSlideNext() {
+            var curList = document.querySelectorAll('#theme_slider>div:not([class~=d-none])');
+            var n = curList[3].nextElementSibling;
+            if (n) {
+                curList[0].className += ' d-none';
+                n.className = n.className.replace('d-none','').trim();
+            } else return;
+        }
+        function themeSlidePrev() {
+            var curList = document.querySelectorAll('#theme_slider>div:not([class~=d-none])');
+            var p = curList[0].previousElementSibling;
+            if (p) {
+                curList[3].className += ' d-none';
+                p.className = p.className.replace('d-none','').trim();
+            } else return;
+        }
+    })();
+</script>
 <body>
-    <!--顶部 start-->
-    <div class="w-100 mytop">
-        <div class="w-100 d-flex justify-content-center">
-            <div class="py-4">
-                <img src="../images/index/logo.jpg" style="width: 10rem;" alt="">
-            </div>
-        </div>
-        <div class="w-100 d-flex justify-content-center">
-            <div>
-                <ul class="list-unstyled d-flex">
-                    <li class="mx-4"><a href="#"><span>首页</span></a></li>
-                    <li class="mx-4"><a href="#"><span>婚礼案例</span><span class="mx-1">|</span><span>Cases</span></a></li>
-                    <li class="mx-4"><a href="#"><span>活动策划</span><span class="mx-1">|</span><span>Event Planning</span></a></li>
-                    <li class="mx-4"><a href="#"><span>品牌历史</span><span class="mx-1">|</span><span>Brand</span></a></li>
-                    <li class="mx-4"><a href="#"><span>婚礼锦囊</span><span class="mx-1">|</span><sspan>News</sspan></a></li>
-                    <li class="mx-4"><a href="#"><span>联系我们</span><span class="mx-1">|</span><span>Contact</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="topZbottom"></div>
-    <!--顶部 end-->
     <!--大图轮播图 start-->
-    <div class="carousel" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../images/index/banner_1.jpg" class="w-100" alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="../images/index/banner_2.jpg" class="w-100" alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="../images/index/banner_3.jpg" class="w-100" alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="../images/index/banner_4.jpg" class="w-100" alt="">
-            </div>
-        </div>
+    <div data-action="slide" class="slider_sp">
+        <div class="show"><a href="detail-case.html"><img src="../images/index/banner_1.jpg" class="w-100" alt=""></a></div>
+        <div><a href="detail-case.html"><img src="../images/index/banner_2.jpg" class="w-100" alt=""></a></div>
+        <div><a href="detail-case.html"><img src="../images/index/banner_3.jpg" class="w-100" alt=""></a></div>
+        <div><a href="detail-case.html"><img src="../images/index/banner_4.jpg" class="w-100" alt=""></a></div>
     </div>
     <!--大图轮播图 end-->
     <!--婚礼案例 start-->
-    <div class="w-primary d-flex justify-content-center mt-3">
-        <div class="block_title mt-4">
-            <div class="m-auto">
+    <div class="w-primary">
+        <div class="d-flex justify-content-center">
+            <div class="block_title">
                 <span class="cn">婚礼案例</span><span class="en">Wedding Cases</span>
             </div>
-
+        </div>
+        <div class="w-100 d-flex justify-content-between mt-30">
+            <div class="case_item">
+                <div class="w-100 overflow_hidden position-relative basecase">
+                    <img src="../images/index/case_1.jpg" class="w-100" alt="">
+                    <div class="caseY">
+                        <div>
+                            <h3>宴会厅婚礼</h3>
+                            <p>古堡外郁郁葱葱的花园 悬念伴随着美景 密布每一寸的秘境 虽然说这里犹如野兽的魔窟 但渐渐深入接触后 ...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case_item d-flex flex-column justify-content-between">
+                <div class="w-100 overflow_hidden basecase position-relative">
+                    <img src="../images/index/case_2.jpg" class="w-100" alt="">
+                    <div class="caseX">
+                        <div>
+                            <h3>户外婚礼</h3>
+                            <p>岁月的花苞绽成带刺的玫瑰，青草味的风拂起洁白的裙摆，一切仿若又回到了那个久远而甜蜜的夏日...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 overflow_hidden basecase position-relative">
+                    <img src="../images/index/case_3.jpg" class="w-100" alt="">
+                    <div class="caseX">
+                        <div>
+                            <h3>集体婚礼</h3>
+                            <p>...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 mt-30 overflow_hidden position-relative basecase">
+            <img src="../images/index/case_4.jpg" class="w-100" alt="">
+            <div class="caseX">
+                <div>
+                    <h3>婚礼秀</h3>
+                    <p>整个秀场的设计以蓝、白为主色调，简约的轴对称布局，皙白如雪的山峦，千姿百态的蓝鹤，荧光闪闪的竹篓...</p>
+                </div>
+            </div>
         </div>
     </div>
     <!--婚礼案例 end-->
+    <!--主题策划 start-->
+    <div class="w-primary">
+        <div class="d-flex justify-content-center">
+            <div class="block_title">
+                <span class="cn">主题策划</span><span class="en">Wedding Style</span>
+            </div>
+        </div>
+    </div>
+    <div class="w-100 mt-30 d-flex justify-content-center align-items-center">
+        <div class="w-side d-flex justify-content-end align-items-center">
+            <div class="arrow d-flex align-items-center" id="arrow-l">
+                <img src="../images/index/left-circle.png" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="w-primary">
+            <div class="w-100 d-flex overflow_hidden" id="theme_slider">
+                <div class="w-ab-25 pointer">
+                    <figure>
+                        <img src="../images/index/sliderimg_1.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>【依贝佳34周年·魅惑之夜】</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer">
+                    <figure>
+                        <img src="../images/index/sliderimg_2.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>求婚仪式</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer">
+                    <figure>
+                        <img src="../images/index/sliderimg_3.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>【依贝佳35周年·绽放之夜】</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer">
+                    <figure>
+                        <img src="../images/index/sliderimg_4.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>《宝宝宴》超人</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer d-none">
+                    <figure>
+                        <img src="../images/index/sliderimg_5.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>《宝宝宴》悠嘻猴</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer d-none">
+                    <figure>
+                        <img src="../images/index/sliderimg_6.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>《宝宝宴》花荡甜心</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer d-none">
+                    <figure>
+                        <img src="../images/index/sliderimg_7.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>《宝宝宴》一百享当当</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="w-ab-25 pointer d-none">
+                    <figure>
+                        <img src="../images/index/sliderimg_8.jpg" class="w-100" alt="">
+                        <figcaption class="text-center">
+                            <h4>寿·宴</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="w-side d-flex align-items-center">
+            <div class="arrow d-flex align-items-center" id="arrow-r">
+                <img src="../images/index/right-circle.png" class="w-100" alt="">
+            </div>
+        </div>
+    </div>
+    <!--主题策划 end-->
+    <!--婚礼锦囊 start-->
+    <div class="w-primary">
+        <div class="d-flex justify-content-center">
+            <div class="block_title">
+                <span class="cn">婚礼锦囊</span><span class="en">Wedding Knowledge</span>
+            </div>
+        </div>
+        <div class="w-100 d-flex mt-30">
+            <div class="w-knowledge">
+                <figure>
+                    <img src="../images/index/knowledge_1.jpg" class="w-100" alt="">
+                    <figcaption class="text-center">
+                        <h4>2019年挑一个“良辰吉日”，嫁给你！</h4>
+                        <p class="font_small desc">自古以来中国嫁娶总讲究个“吉时”挑选一个”好日子“并不简单需要考虑到生辰八字、天时地利、传统避讳还要</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="w-knowledge mx-20">
+                <figure>
+                    <img src="../images/index/knowledge_1.jpg" class="w-100" alt="">
+                    <figcaption class="text-center">
+                        <h4>看完这7个小技巧，婚礼誓言信手拈来</h4>
+                        <p class="font_small desc">婚礼是对你结婚前词的爱情故事总结，婚礼誓言是让别人了解你的爱情故事，让你所爱的人了解你的爱情是什么让</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="w-knowledge">
+                <figure>
+                    <img src="../images/index/knowledge_1.jpg" class="w-100" alt="">
+                    <figcaption class="text-center">
+                        <h4>找的婚庆公司价格低，自己是不是赚了呢？</h4>
+                        <p class="font_small desc">有的婚庆公司报价很低，有的婚庆公司报价很高，但是都能完成一场婚礼，可是真正的婚礼服务和婚礼价格到底有</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="w-100 d-flex mt-30">
+            <div class="w-50 text-center"><img src="../images/index/companyimg_1.png" alt=""></div>
+            <div class="w-50 text-center"><img src="../images/index/companyimg_2.jpg" alt=""></div>
+        </div>
+    </div>
+    <!--婚礼锦囊 end-->
+    <!--服务承诺 start-->
+    <div class="w-primary">
+        <div class="d-flex justify-content-center">
+            <div class="block_title">
+                <span class="cn">服务承诺</span><span class="en">PLEDGE</span>
+            </div>
+        </div>
+        <div class="w-100 d-flex mt-30">
+            <div class="w-25 d-flex">
+                <div class="mybadge">1</div>
+                <div class="">
+                    <div><b>品牌优势</b></div>
+                    <div class="desc font_small">13年专注打造金牌品质</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">2</div>
+                <div class="">
+                    <div><b>实力保障</b></div>
+                    <div class="desc font_small">2000平米道具仓库</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">3</div>
+                <div class="">
+                    <div><b>规范流程</b></div>
+                    <div class="desc font_small">多部门标准化分工</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">4</div>
+                <div class="">
+                    <div><b>顶级团队</b></div>
+                    <div class="desc font_small">行内精英多对一服务标准</div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 d-flex mt-30">
+            <div class="w-25 d-flex">
+                <div class="mybadge">5</div>
+                <div class="">
+                    <div><b>婚礼经验</b></div>
+                    <div class="desc font_small">服务超5000对新人</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">6</div>
+                <div class="">
+                    <div><b>创新能力</b></div>
+                    <div class="desc font_small">引领婚礼时尚 发布婚礼新品</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">7</div>
+                <div class="">
+                    <div><b>服务品质</b></div>
+                    <div class="desc font_small">客服跟踪、高端定制婚礼护航</div>
+                </div>
+            </div>
+            <div class="w-25 d-flex">
+                <div class="mybadge">8</div>
+                <div class="">
+                    <div><b>消费透明</b></div>
+                    <div class="desc font_small">欺骗、隐瞒行为0容忍</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--服务承诺 end-->
+    <iframe id="footerFrame" src="footer.html" frameborder="0" scrolling="no"></iframe>
 </body>
 </html>
